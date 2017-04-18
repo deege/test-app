@@ -10,7 +10,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - mvn install
+      - mvn clean buildnumber:create buildnumber:create-metadata install
   post_build:
     commands:
       - echo Build completed on `date`
