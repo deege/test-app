@@ -21,7 +21,7 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>$\{project.artifactId}-$\{project.version}-r$\{buildNumber}</finalName>
+    <finalName>${project.artifactId}-${project.version}-r${buildNumber}</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -31,7 +31,7 @@
             <manifestEntries>
               <company>DeegeU</company>
               <url>${project.url}</url>
-              <Implementation-Build>$\{buildNumber}</Implementation-Build>
+              <Implementation-Build>${buildNumber}</Implementation-Build>
             </manifestEntries>
           </archive>
         </configuration>
