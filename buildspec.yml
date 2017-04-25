@@ -1,10 +1,5 @@
 version: 0.1
 
-environment_variables:
-  plaintext:
-    NEXUS_USERNAME: "your-Nexus-user-name"
-    NEXUS_PASSWORD: "your-Nexus-password"
-
 phases:
   install:
     commands:
