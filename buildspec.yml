@@ -19,7 +19,7 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - mvn package
+      - mvn install -s s3://aws-build-secrets/maven/settings.xml
 artifacts:
   files:
     - target/test-app-1.0-SNAPSHOT-r*.jar
