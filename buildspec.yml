@@ -11,7 +11,7 @@ phases:
       - echo Nothing to do in the install phase...
   pre_build:
     commands:
-      - aws s3 cp s3://aws-build-secrets/settings.xml ~/.m2/settings.xml
+      - aws s3 cp s3://aws-build-secrets/maven/settings.xml ~/.m2/settings.xml
       - ls -lhr ~/.m2/settings.xml
   build:
     commands:
