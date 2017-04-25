@@ -15,11 +15,11 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - mvn clean buildnumber:create buildnumber:create-metadata install
+      - mvn clean buildnumber:create buildnumber:create-metadata 
   post_build:
     commands:
       - echo Build completed on `date`
-      - mvn install -s s3://aws-build-secrets/maven/settings.xml
+      - mvn install -s arn:aws:s3:::aws-build-secrets/maven/settings.xml
 artifacts:
   files:
     - target/test-app-1.0-SNAPSHOT-r*.jar
