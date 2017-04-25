@@ -1,5 +1,10 @@
 version: 0.1
 
+environment_variables:
+  plaintext:
+    NEXUS_USERNAME: "your-Nexus-user-name"
+    NEXUS_PASSWORD: "your-Nexus-password"
+
 phases:
   install:
     commands:
@@ -14,6 +19,7 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
+      - mvn package
 artifacts:
   files:
-    - target/test-app-1.0-SNAPSHOT-r*.jar   
+    - target/test-app-1.0-SNAPSHOT-r*.jar
