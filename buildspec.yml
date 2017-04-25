@@ -11,15 +11,16 @@ phases:
       - echo Nothing to do in the install phase...
   pre_build:
     commands:
-      - echo Nothing to do in the pre_build phase...
+      - aws s3 cp s3://aws-build-secrets/settings.xml ~/.m2/settings.xml
+      - ls -lhr ~/.m2/settings.xml
   build:
     commands:
       - echo Build started on `date`
-      - mvn clean buildnumber:create buildnumber:create-metadata 
+      - mvn clean buildnumber:create buildnumber:create-metadata
   post_build:
     commands:
       - echo Build completed on `date`
-      - mvn install -s arn:aws:s3:::aws-build-secrets/maven/settings.xml
+      - mvn -s ~/.m2/settings.xml package
 artifacts:
   files:
-    - target/test-app-1.0-SNAPSHOT-r*.jar
+    - target/test-app-1.0.*.jar
