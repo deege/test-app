@@ -45,6 +45,7 @@
                             <company>DeegeU</company>
                             <url>${project.url}</url>
                             <Implementation-Build>${buildNumber}</Implementation-Build>
+                            <git-SHA-1>${buildNumber}</git-SHA-1>
                         </manifestEntries>
                     </archive>
                 </configuration>
